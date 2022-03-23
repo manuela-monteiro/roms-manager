@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { RomsModule } from './roms/roms.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [MongooseModule.forRoot('mongodb+srv://Monteiro:romsroom@roms-room.n9uox.mongodb.net/romsroom?retryWrites=true&w=majority'), RomsModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
